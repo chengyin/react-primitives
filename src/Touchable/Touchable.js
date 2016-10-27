@@ -35,12 +35,12 @@ const InsetPropType = PropTypes.shape({
  * },
  * ```
  */
-const Touchable = (Animated, StyleSheet) => {
+const Touchable = (Animated, StyleSheet, options = {}) => {
 
   const styles = StyleSheet.create({
-    touchable: {
+    touchable: options.cursorSupported ? {
       cursor: 'pointer',
-    },
+    } : null,
   });
 
   return React.createClass({
